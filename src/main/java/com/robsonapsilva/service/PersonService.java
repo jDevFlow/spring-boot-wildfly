@@ -9,10 +9,11 @@ import com.robsonapsilva.domain.Person;
 import com.robsonapsilva.domain.repository.IPersonRepository;
 
 /**
- * Class to broker the controller access to the repository IPersonRepository.
- * 
- * @author robsonapsilva
+ * Class to broker the controller access to the repository.
  *
+ * @author robsonapsilva
+ * 
+ * @see IPersonRepository
  */
 @Service
 public class PersonService {
