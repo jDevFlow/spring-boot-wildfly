@@ -10,12 +10,16 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
+/**
+ * Person class
+ * 
+ * @author robsonapsilva
+ *
+ */
 @Entity
 @Data
-@NoArgsConstructor
-public class Person implements Serializable{
+public class Person implements Serializable {
 
 	private static final long serialVersionUID = 4802343462796879758L;
 
@@ -23,10 +27,10 @@ public class Person implements Serializable{
 	@SequenceGenerator(name = "PersonSeq", sequenceName = "PERSON_SEQ")
 	@GeneratedValue(generator = "PersonSeq", strategy = GenerationType.SEQUENCE)
 	private Long id;
-	
+
 	@Column(nullable = false, length = 100)
 	private String fullName;
-	
+
 	@Column(nullable = false, length = 100, unique = true)
 	private String email;
 }

@@ -15,7 +15,7 @@ import com.robsonapsilva.domain.Person;
 import com.robsonapsilva.service.PersonService;
 
 /**
- * class to map endpoint's
+ * class to map endpoint's referring to the person
  * 
  * @author robsonapsilva
  *

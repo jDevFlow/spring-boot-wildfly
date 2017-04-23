@@ -6,10 +6,13 @@ import org.springframework.stereotype.Repository;
 import com.robsonapsilva.domain.Person;
 
 /**
- * Interface with the methods of access to the repository. This interface
- * extends JpaRepository.
+ * Interface with the methods of access to the repository, will be accessed by
+ * service. This interface extends JpaRepository.
  * 
  * @author robsonapsilva
+ *
+ * @see PersonService
+ * @see JpaRepository
  *
  */
 @Repository
