@@ -50,6 +50,42 @@ In the "${jboss_home}/standalone/configuration", make the following changes to t
 	<driver-class>org.postgresql.Driver</driver-class>
 </driver>
 ```
+
+## SpringBoot Project
+
+### POM.XML
+In the "${project_dir}/", make the following changes to the pom.xml file :
+-Modify ```<packaging>jar</packaging>``` to ```<packaging>war</packaging>```
+-Search the following dependency
+```
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+```
+-Remove the starter-tomcat artifact from this dependency
+```
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-web</artifactId>
+	<exclusions>
+		<exclusion>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+		</exclusion>
+	</exclusions>
+</dependency>
+```
+-Add dependency
+```
+<dependency>
+	<groupId>javax.servlet</groupId>
+	<artifactId>servlet-api</artifactId>
+	<version>2.5</version>
+	<scope>provided</scope>
+</dependency>
+```
+
 [1]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 [2]: https://projectlombok.org/
 [3]: https://maven.apache.org/
