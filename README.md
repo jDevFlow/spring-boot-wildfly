@@ -25,7 +25,31 @@ Download [postgresql-9.4.1211][6] and unzip download inside the created folder. 
 ```
 
 ### Standalone.xml
--
+In the "${jboss_home}/standalone/configuration", make the following changes to the standalone.xml file :
+- Search the subsystem :```<subsystem xmlns="urn:jboss:domain:datasources:4.0">```
+- Create the datasource:
+```
+<datasource jta="true" jndi-name="java:/PostgresDS" pool-name="PostgresDS" enabled="true" use-ccm="true">
+	<connection-url>jdbc:postgresql://localhost:5432/db</connection-url>
+    	<driver-class>org.postgresql.Driver</driver-class>
+    	<driver>postgresql</driver>
+	<security>
+		<user-name>your username installation</user-name>
+		<password>your password installation</password>
+    	</security>
+	<validation>
+		<valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker"/>
+		<background-validation>true</background-validation>
+		<exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter"/>
+    	</validation>
+</datasource>
+```
+- Add driver:
+```
+<driver name="postgresql" module="org.postgresql">
+	<driver-class>org.postgresql.Driver</driver-class>
+</driver>
+```
 [1]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 [2]: https://projectlombok.org/
 [3]: https://maven.apache.org/
