@@ -94,7 +94,8 @@ In the "${workspace_loc:/your_project/src/main/resources}", make the following c
 # DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
 spring.datasource.jndi-name=java:/PostgresDS
 ```
-To learn more about the Spring Boot autoconfiguration properties: 
+To learn more about the Spring Boot autoconfiguration properties:
+
 https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 
 [1]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
