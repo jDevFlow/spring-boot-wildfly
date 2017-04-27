@@ -54,16 +54,16 @@ In the "${jboss_home}/standalone/configuration", make the following changes to t
 ## SpringBoot Project
 
 ### POM.XML
-In the "${project_dir}/", make the following changes to the pom.xml file :
--Modify ```<packaging>jar</packaging>``` to ```<packaging>war</packaging>```
--Search the following dependency
+In the "${workspace_loc:/your_project}", make the following changes to the pom.xml file:
+- Modify ```<packaging>jar</packaging>``` to ```<packaging>war</packaging>```
+- Search the following dependency
 ```
 <dependency>
 	<groupId>org.springframework.boot</groupId>
 	<artifactId>spring-boot-starter-web</artifactId>
 </dependency>
 ```
--Remove the starter-tomcat artifact from this dependency
+- Remove the starter-tomcat artifact from this dependency
 ```
 <dependency>
 	<groupId>org.springframework.boot</groupId>
@@ -76,7 +76,7 @@ In the "${project_dir}/", make the following changes to the pom.xml file :
 	</exclusions>
 </dependency>
 ```
--Add dependency
+- Add dependency
 ```
 <dependency>
 	<groupId>javax.servlet</groupId>
@@ -85,6 +85,17 @@ In the "${project_dir}/", make the following changes to the pom.xml file :
 	<scope>provided</scope>
 </dependency>
 ```
+
+
+### APPLICATION.PROPERTIES
+In the "${workspace_loc:/your_project/src/main/resources}", make the following changes to the application.properties file:
+- Add property
+```
+# DATASOURCE (DataSourceAutoConfiguration & DataSourceProperties)
+spring.datasource.jndi-name=java:/PostgresDS
+```
+To learn more about the Spring Boot autoconfiguration properties: 
+https://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 
 [1]: http://www.oracle.com/technetwork/java/javase/downloads/index.html
 [2]: https://projectlombok.org/
